@@ -1,5 +1,22 @@
 # https://leetcode.com/problems/battleships-in-a-board/
 
+# === 1 ===
+
+class Solution:
+    def countBattleships(self, board: List[List[str]]) -> int:
+
+        num_ships = 0
+        if not board: 
+            return num_ships
+        
+        for i in range(len(board)):
+            for j in range(len(board[i])):
+                if (board[i][j] == 'X' and (i == 0 or board[i - 1][j] == '.') and (j == 0 or board[i][j - 1] == '.')):
+                    num_ships += 1 
+        return num_ships
+
+# === 2 ===
+
 class Solution:
     def countBattleships(self, board: List[List[str]]) -> int:
         if not board: 
