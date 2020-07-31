@@ -13,3 +13,15 @@ class Solution:
             ans = ans + d[key]
             
         return ans
+
+===
+
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        
+        ans = str()
+
+        for _,v in sorted(zip(indices, list(s))):
+            ans = ans + v
+        
+        return ans
